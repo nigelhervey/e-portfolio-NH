@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Puzzle | Nigel Hervey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="index.html" class="logo">NH.</a>
+        <div class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#projects">Projects</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <article class="project-detail">
+
+        <p class="section-label">
+            02 / INTERACTIVE LEARNING
+        </p>
+
+        <h1>Alphabet Puzzle</h1>
+
+        <p class="project-intro">
+            Exploring foundational literacy
+            through interactive learning.
+        </p>
+
+        <section class="project-description">
+            <p class="section-label">01 / OVERVIEW</p>
+            <h2>About the Project</h2>
+
+            <p>
+                Alphabet Puzzle is an interactive
+                phonics project designed to help
+                young learners develop foundational
+                letter-sound knowledge.
+            </p>
+
+            <p>
+                The project explores how visual
+                elements, interaction, and
+                instructional feedback can support
+                early literacy learning.
+            </p>
+        </section>
+
+        <section class="project-demo">
+            <p class="section-label">
+                02 / PROJECT GALLERY
+            </p>
+
+            <h2>Inside the Activity</h2>
+
+            <div class="project-gallery">
+
+                <div class="gallery-image-frame">
+                    <img
+                        id="gallery-image"
+                        src="images/alphabet-01.png"
+                        alt="Alphabet Puzzle screenshot 1">
+                </div>
+
+                <div class="gallery-bottom">
+
+                    <div class="gallery-info">
+                        <span id="gallery-counter">
+                            01 / 10
+                        </span>
+                        <p id="gallery-caption">
+                            Alphabet Puzzle — Screenshot 1
+                        </p>
+                    </div>
+
+                    <div class="gallery-buttons">
+                        <button
+                            id="gallery-prev"
+                            type="button"
+                            aria-label="Previous image">
+                            &larr;
+                        </button>
+
+                        <button
+                            id="gallery-next"
+                            type="button"
+                            aria-label="Next image">
+                            &rarr;
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="project-description">
+            <p class="section-label">
+                03 / DESIGN & DEVELOPMENT
+            </p>
+
+            <h2>Behind the Design</h2>
+
+            <p>
+                This project is an ongoing
+                exploration of interactive
+                instructional design for
+                early literacy.
+            </p>
+        </section>
+
+        <a href="index.html#projects"
+           class="text-link">
+            &larr; Back to projects
+        </a>
+
+    </article>
+</main>
+
+<footer>
+    <p>Nigel Hervey &copy; 2026</p>
+    <p>University of Florida | EME 6208</p>
+</footer>
+
+<script>
+    const galleryImages = [
+        "alphabet-01.png",
+        "alphabet-02.png",
+        "alphabet-03.png",
+        "alphabet-04.png",
+        "alphabet-05.png",
+        "alphabet-06.png",
+        "alphabet-07.png",
+        "alphabet-08.png",
+        "alphabet-09.png",
+        "alphabet-10.png"
+    ];
+
+    const imageElement =
+        document.getElementById("gallery-image");
+
+    const counterElement =
+        document.getElementById("gallery-counter");
+
+    const captionElement =
+        document.getElementById("gallery-caption");
+
+    let currentImage = 0;
+
+    function showImage(index) {
+        currentImage =
+            (index + galleryImages.length)
+            % galleryImages.length;
+
+        imageElement.src =
+            "images/" + galleryImages[currentImage];
+
+        imageElement.alt =
+            "Alphabet Puzzle screenshot "
+            + (currentImage + 1);
+
+        const number =
+            String(currentImage + 1).padStart(2, "0");
+
+        counterElement.textContent =
+            number + " / 10";
+
+        captionElement.textContent =
+            "Alphabet Puzzle — Screenshot "
+            + (currentImage + 1);
+    }
+
+    document.getElementById("gallery-prev")
+        .addEventListener("click", function() {
+            showImage(currentImage - 1);
+        });
+
+    document.getElementById("gallery-next")
+        .addEventListener("click", function() {
+            showImage(currentImage + 1);
+        });
+</script>
+
+</body>
+</html>
