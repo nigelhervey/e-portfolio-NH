@@ -9,6 +9,7 @@
     <title>Nigel Hervey | Educational Technology</title>
 
     <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
@@ -18,9 +19,20 @@
             <a href="index.html" class="logo">NH.</a>
 
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-            </div>
+    <a href="#about">About</a>
+
+    <div class="nav-dropdown">
+        <a href="#projects" class="dropdown-trigger">
+            Work <span class="dropdown-arrow">⌄</span>
+        </a>  
+<div class="dropdown-menu">
+    <a href="word-detective.html">Word Detective</a>
+    <a href="alphabet-puzzle.html">Alphabet Puzzle</a>
+    <a href="reading-model.html">Reading Assessment Model</a>
+</div>
+
+    </div>
+</div>
         </nav>
     </header>
 
@@ -29,7 +41,7 @@
         <section class="hero">
             <p class="eyebrow">EDUCATIONAL TECHNOLOGY PORTFOLIO</p>
 
-            <h1>Nigel Hervey</h1>
+            <h1>Nigel Hervey<span class="period">.</span></h1>
 
             <p class="hero-description">
                 Exploring the intersection of learning,
@@ -87,9 +99,9 @@
 
 <section id="projects" class="projects">
 
-    <p class="section-label">02 / SELECTED WORK</p>
+    <p class="section-label">02 / SELECTED WORKS</p>
 
-    <h2>Projects<span class="period">.</span></h2>
+    <h2>Selected Works<span class="period">.</span></h2>
 
     <div class="project-list">
 
@@ -243,6 +255,15 @@
         <p>Nigel Hervey &copy; 2026</p>
         <p>University of Florida | EME 6208</p>
     </footer>
+<script>
+    const header = document.querySelector("header");
 
+    function updateHeader() {
+        header.classList.toggle("scrolled", window.scrollY > 10);
+    }
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+</script>
 </body>
 </html>
