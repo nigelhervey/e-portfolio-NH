@@ -1,12 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
+
     <title>Digital Animation | Nigel Hervey</title>
+
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body>
@@ -14,35 +18,103 @@
 <header>
     <nav>
         <a href="index.html" class="logo">NH.</a>
+
         <div class="nav-links">
             <a href="index.html#about">About</a>
-            <a href="index.html#coursework">Coursework</a>
+
+            <div class="nav-dropdown">
+                <a href="index.html#projects" class="dropdown-trigger">
+                    Work <span class="dropdown-arrow">⌄</span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="word-detective.html">Word Detective</a>
+                    <a href="alphabet-puzzle.html">Alphabet Puzzle</a>
+                    <a href="reading-model.html">Reading Assessment Model</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <a href="index.html#coursework" class="dropdown-trigger">
+                    Coursework <span class="dropdown-arrow">⌄</span>
+                </a>
+
+                <div class="dropdown-menu">
+                    <a href="image-editing.html">Image Editing</a>
+                    <a href="reading-science-trivia.html">Reading Science Trivia</a>
+                    <a href="word-detective.html">Word Detective</a>
+                    <a href="video-production.html">Video Production</a>
+                    <a href="digital-animation.html">Digital Animation</a>
+                    <a href="https://youtu.be/kB7Xi-rRibU" target="_blank" rel="noopener noreferrer">Screencast — Traditional</a>
+                    <a href="https://youtu.be/3bvN23gJemI" target="_blank" rel="noopener noreferrer">Screencast — AI</a>
+                </div>
+            </div>
         </div>
     </nav>
 </header>
 
 <main>
+
     <article class="project-detail">
 
-        <p class="section-label">
-            03 / COURSEWORK
-        </p>
+        <p class="section-label">06 / DIGITAL ANIMATION</p>
 
         <h1>Digital Animation</h1>
 
         <p class="project-intro">
-            Creating educational videos using
-            narration, images, and instructional content.
+            Exploring scientific concepts through
+            AI-assisted animation.
         </p>
 
-        <section class="project-description">
-            <p class="section-label">PROJECT STATUS</p>
+        <section class="project-demo">
 
-            <h2>Coming Soon</h2>
+            <p class="section-label">01 / ANIMATED EXPLANATION</p>
+
+            <h2>Scarborough's Reading Rope</h2>
 
             <p>
-                Exploring how digital animation can communicate ideas and support learning.
+                A visual explanation of how language
+                comprehension and word recognition
+                intertwine to support skilled reading.
             </p>
+
+            <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/Nljyym3Keoo"
+                    title="Scarborough's Reading Rope — Animated Explanation"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <a href="https://youtu.be/Nljyym3Keoo"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-link">
+                Watch on YouTube &rarr;
+            </a>
+
+        </section>
+
+        <section class="project-description">
+
+            <p class="section-label">PROJECT OVERVIEW</p>
+
+            <h2>Process &amp; Reflection<span class="period">.</span></h2>
+
+            <p>
+                For this project, I was tasked with developing an animated scientific explanation using generative AI tools. I chose to create an animation of Scarborough's Reading Rope to illustrate how skilled reading happens. I used ChatGPT to develop a script, FineVoice to generate the narration, and ChatGPT to develop and refine the animation.
+            </p>
+
+            <p>
+                After several iterations, I imported the animation into Canva, where I added captions, arrows, and additional animation effects to visually communicate the relationships between the different parts of the model. To ensure scientific accuracy, I compared the elements of my animation to the original Scarborough's Reading Rope model.
+            </p>
+
+            <p>
+                This project demonstrated the importance of maintaining human control when developing educational media with AI. Although AI helped me create the animation, several iterations were necessary to achieve the desired appearance and movement of the rope. I also found it useful to combine AI-generated content with traditional editing tools to accomplish what AI could not achieve on its own.
+            </p>
+
         </section>
 
         <a href="index.html#coursework"
@@ -51,12 +123,30 @@
         </a>
 
     </article>
+
 </main>
 
 <footer>
     <p>Nigel Hervey &copy; 2026</p>
-    <p>University of Florida | EME 6208</p>
+    <p>
+        <a href="https://education.ufl.edu/educational-technology/"
+           target="_blank" rel="noopener noreferrer">
+            University of Florida | Educational Technology
+        </a>
+        | EME 6208
+    </p>
 </footer>
+
+<script>
+    const header = document.querySelector("header");
+
+    function updateHeader() {
+        header.classList.toggle("scrolled", window.scrollY > 10);
+    }
+
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
+</script>
 
 </body>
 </html>
